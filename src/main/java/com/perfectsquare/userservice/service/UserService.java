@@ -126,7 +126,7 @@ public class UserService {
         if(!UserStatus.ACTIVE.equals(byId.getUserStatus())){
             throw new PSApiException(UserServiceApiError.USER_NOT_ACTIVE);
         }
-
+    // Test Commit
         byId.setUserStatus(UserStatus.DELETED);
         UsersEntity save = usersRepository.save(byId);
         return mapperUtil.mapSourceToTargetClass(save, UserResponseDto.class);
